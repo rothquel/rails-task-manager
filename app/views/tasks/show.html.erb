@@ -1,6 +1,14 @@
-<h2><%= @task.title %></h2>
-<p><%= @task.details %></p>
-<p>Completed = <%= @task.completed %></p>
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+    <h1 class="text-center"><%= @task.title %></h1>
+      <p><%= @task.details %></p>
+      <p>Completed = <%= @task.completed %></p>
 
-<%= link_to "Edit this task", edit_path %>
-<%= link_to "Back to all tasks", tasks_path %>
+      <%= link_to "Edit this task", edit_path %><br>
+      <%= link_to "Delete this task",
+        task_path(@task.id),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %><br>
+      <%= link_to "Back to all tasks", tasks_path %>
+  </div>
+</div>

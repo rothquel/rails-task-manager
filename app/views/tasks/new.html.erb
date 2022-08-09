@@ -1,11 +1,16 @@
-<h1>Add a task</h1>
-
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row h-200 d-flex justify-content-center align-items-center py-5">
+    <h1 class="text-center">Add a task</h1>
+    <%# <div class="col-3"> %>
+    <%= form_for(@task) do |f|%>
+      <%= f.label :title, class: "fw-bold" %>
+      <%= f.text_field :title, class: "form-control my-3" %>
+      <%= f.label :details, class: "fw-bold"%>
+      <%= f.text_field :details, class: "form-control my-3" %>
+      <%= f.label :completed, class: "fw-bold pe-2" %>
+      <%= f.check_box :completed %>
+      <%= f.submit class: "btn btn-primary form-control my-3" %>
+    <% end %>
+    <%# </div> %>
+  </div>
+</div>
