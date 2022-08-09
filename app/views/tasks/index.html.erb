@@ -1,8 +1,13 @@
+
 <h1>All tasks</h1>
-<ul>
+
+<ul class="py-3 list-group">
 <% @tasks.each do |task| %>
-<li><%= link_to task.title, task_path(task) %> ( <%= task.details %> ) done = <%= task.completed %> </li>
+<% if task.completed == false %>
+<li class="py-3 list-group-item"><i class="fa-regular fa-square"></i> <%= link_to task.title, task_path(task) %> ( <%= task.details %> )</li>
+<% else %>
+<li class="py-3 list-group-item"><i class="fa-regular fa-square-check"></i> <%= link_to task.title, task_path(task) %> ( <%= task.details %> )</li>
+<% end %>
 <% end %>
 </ul>
-
 <%= link_to "Add a new task", tasks_new_path %>
